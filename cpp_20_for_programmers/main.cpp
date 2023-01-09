@@ -1,55 +1,18 @@
 #include <iostream>
-#include <string>
+#include <random>
 
 using namespace std;
 
-int maximum(int x, int y, int z);
-
-void fig_02_06() {
-    string s1{"happy"};
-    string s2{" birthday"};
-    string s3;
-    
-    cout << "s1: \""<< s1 << "\"; length: " << s1.length() << "\ns2: \"" << s2 << "\"; length: " << s2.length() << "\ns3: \"" << s3 << "\"; length: "  << s3.length();
-}
-
-int fig_02_04() {
-    int number1{0};
-    int number2{0};
-    int sum{0};
-
-    cout << "Enter first number: ";
-    cin >> number1;
-
-    cout << "Enter second number: ";
-    cin >> number2;
-
-    sum = number1 + number2;
-
-    std::cout << "Sum is: " << sum << "\n";
-
-    return 0;
-}
-
 int main(int argc, const char * argv[]) {
+    default_random_engine engine{};
+    uniform_int_distribution randomDie{1, 6};
+    
+    for (int counter{1}; counter <= 10; ++counter)
+    {
+        cout << randomDie(engine) << " ";
+    }
 
-    fig_02_06();
+    cout << "\n";
 
     return 0;
-}
-
-int maximum(int x, int y, int z)
-{
-    int maximumValue{x};
-    if (y > maximumValue)
-    {
-        maximumValue = y;
-    }
-
-    if (z > maximumValue)
-    {
-        maximumValue = z;
-    }
-
-    return maximumValue;
 }
