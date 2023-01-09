@@ -3,6 +3,8 @@
 
 using namespace std;
 
+int maximum(int x, int y, int z);
+
 void fig_02_06() {
     string s1{"happy"};
     string s2{" birthday"};
@@ -34,4 +36,20 @@ int main(int argc, const char * argv[]) {
     fig_02_06();
 
     return 0;
+}
+
+int maximum(int x, int y, int z)
+{
+    int maximumValue{x};
+    if (y > maximumValue)
+    {
+        maximumValue = y;
+    }
+
+    if (z > maximumValue)
+    {
+        maximumValue = z;
+    }
+
+    return maximumValue;
 }
