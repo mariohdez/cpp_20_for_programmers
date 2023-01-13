@@ -4,12 +4,21 @@
 #include <vector>
 #include <numeric>
 
+void cubeByReference(int* nPtr);
+
 int main(int argc, const char * argv[]) {
-    constexpr int a{7};
-    const int* aPtr{&a};
+    int number{5};
+
+    std::cout<< fmt::format("Original value of number is {}\n", number);
     
-    std::cout << "The address of a is " << &a << "\n";
-    std::cout << "The value of aPtr is " << aPtr << "\n";
+    cubeByReference(&number);
+    
+    std::cout << fmt::format("New value of number is {}\n", number);
 
     return 0;
+}
+
+void cubeByReference(int* nPtr)
+{
+    *nPtr = *nPtr * *nPtr * *nPtr;
 }
