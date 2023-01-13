@@ -5,13 +5,11 @@
 #include <numeric>
 
 int main(int argc, const char * argv[]) {
-    std::vector<int> values(10);
+    constexpr int a{7};
+    const int* aPtr{&a};
+    
+    std::cout << "The address of a is " << &a << "\n";
+    std::cout << "The value of aPtr is " << aPtr << "\n";
 
-    try {
-        std::cout << "\nAttempt to display integers.at(15)\n";
-        std::cout << values.at(10000);
-    } catch (const std::out_of_range& ex) {
-        std::cerr << ex.what() << "\n";
-    }
     return 0;
 }
