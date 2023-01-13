@@ -7,13 +7,7 @@
 void cubeByReference(int* nPtr);
 
 int main(int argc, const char * argv[]) {
-    int number{5};
-
-    std::cout<< fmt::format("Original value of number is {}\n", number);
-    
-    cubeByReference(&number);
-    
-    std::cout << fmt::format("New value of number is {}\n", number);
+    int n[5]{50, 20, 30, 10, 40};
 
     return 0;
 }
